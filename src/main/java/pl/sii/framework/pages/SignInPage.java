@@ -30,16 +30,16 @@ public class SignInPage extends Page {
     @FindBy(css = "#email")
     private WebElement emailInput;
 
-    @FindBy(css = "input[name='passwd']")
+    @FindBy(css = "#passwd")
     WebElement passwordInput;
 
-    @FindBy(css = "button[id='SubmitLogin']")
+    @FindBy(css = "#SubmitLogin")
     WebElement submitButton;
 
     @FindBy(css = ".alert-danger")
     WebElement alertMessage;
 
-    @Step("User set email address to email input field")
+    @Step("User sets email address to email input field")
     public SignInPage withEmail(String email) {
         log.info("Set email {}", email);
         emailInput.sendKeys(email);
