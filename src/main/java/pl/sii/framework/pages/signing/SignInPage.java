@@ -31,10 +31,10 @@ public class SignInPage extends Page {
     @FindBy(css = "#email")
     private WebElement emailInput;
 
-    @FindBy(css = "input[name='passwd']")
+    @FindBy(css = "#passwd")
     WebElement passwordInput;
 
-    @FindBy(css = "button[id='SubmitLogin']")
+    @FindBy(css = "#SubmitLogin")
     WebElement submitButton;
 
     @FindBy(css = "a[title='Recover your forgotten password']")

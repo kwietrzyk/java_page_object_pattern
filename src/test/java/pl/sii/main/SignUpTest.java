@@ -29,13 +29,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Execution(ExecutionMode.CONCURRENT)
 public class SignUpTest extends BaseTest {
 
-    /*
-        Required fields in form:
-        lastname is required.
-        firstname is required.
-        email is required.
-        passwd is required.
-   */
+    // Required fields in form: lastname, firstname, email, passwd.
 
     @Test
     @Tag("signup")

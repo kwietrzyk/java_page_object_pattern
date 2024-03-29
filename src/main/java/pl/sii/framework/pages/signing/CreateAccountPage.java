@@ -25,6 +25,7 @@ public class CreateAccountPage extends Page {
 
     @FindBy(css = "#id_gender2")
     WebElement mrsTitle;
+
     @FindBy(css = "#customer_firstname")
     WebElement firstNameInput;
 

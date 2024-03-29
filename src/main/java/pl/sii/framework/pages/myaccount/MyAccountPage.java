@@ -15,7 +15,7 @@ public class MyAccountPage extends Page {
         super(driver);
     }
 
-    @FindBy(xpath = "//p[contains(text(), 'Your account has been created.')]") // OR @FindBy(css = .alert-success")
+    @FindBy(xpath = "//p[contains(text(), 'Your account has been created.')]")
     WebElement successAlertMessage;
 
     @FindBy(css = "*[title='Add my first address']")

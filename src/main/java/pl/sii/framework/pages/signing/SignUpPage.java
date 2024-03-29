@@ -20,8 +20,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pl.sii.framework.base.component.Page;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 @Slf4j
 public class SignUpPage extends Page {
 

@@ -8,13 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import pl.sii.framework.base.component.Page;
-import pl.sii.framework.pages.signing.SignInPage;
 
 import java.util.List;
 import java.util.Random;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
 @Slf4j
 public class AddAddressPage extends Page {
     public AddAddressPage(WebDriver driver) {

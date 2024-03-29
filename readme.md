@@ -16,7 +16,8 @@ Since everything is set up, the tests can be added and run straight away.
 ## The Project's Structure:
 * the pl.sii.framework package placed in src\main\java contains framework specific implementation
 * the pl.sii package placed in src\test\java contains automated sample test cases 
-* src\main\resources contains properties files
+* src\main\resources contains properties files - please replace "xxx" with your credentials before running tests  
+(firstly, you have to create new account in the Shop)
 * pom.xml: maven file defines the following:
   * artifact id as JavaPageObjectTemplate
   * all the required dependencies with versions extracted to maven properties to reduce maintenance

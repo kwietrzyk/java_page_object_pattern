@@ -15,13 +15,12 @@ public class MyPersonalInformationPage extends Page {
         super(driver);
     }
 
-    // insert locators and methods here
-
     @FindBy(css = "#id_gender1")
     WebElement mrTitle;
 
     @FindBy(css = "#id_gender2")
     WebElement mrsTitle;
+
     @FindBy(css = "#firstname")
     WebElement firstNameInput;
 
@@ -119,7 +118,6 @@ public class MyPersonalInformationPage extends Page {
         select.selectByValue(String.valueOf(year));
         return this;
     }
-
 
     @Step("User sets new password to input field")
     public MyPersonalInformationPage withNewPassword(String newPassword) {
