@@ -17,7 +17,6 @@ public class MyAddressesTest extends BaseTest {
     @Tag("address")
     @DisplayName("Add valid first address, verify and delete")
     public void fillAddressMandatoryFieldsShouldSucceed() {
-        // removing all existing addresses before this test
         MyAccountPage myAccount = signInSuccessfully().goToMyAddresses().removeExistingAddressesIfAny().goToMyAccount();
 
         String addressTitle = faker.address().streetName();

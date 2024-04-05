@@ -9,3 +9,4 @@ target/
 *.ear
 *.logs
 *.iml
+**/configuration.properties

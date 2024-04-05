@@ -94,7 +94,7 @@ public class SignUpTest extends BaseTest {
                     .waitForPageLoadWithProperPartUrl("account-creation")
                     .setTitle(Title.randomValue())
                     .withLastName(faker.name().lastName())
-                    .withPassword(faker.internet().password(5, 15))
+                    .withPassword(faker.internet().password())
                     .withDayOfBirth(ThreadLocalRandom.current().nextInt(1, 29))
                     .withMonthOfBirth(ThreadLocalRandom.current().nextInt(1, 13))
                     .withYearOfBirth(ThreadLocalRandom.current().nextInt(1900, 2020))
