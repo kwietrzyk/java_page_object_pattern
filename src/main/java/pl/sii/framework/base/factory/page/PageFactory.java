@@ -11,22 +11,22 @@
  * limitations under the License.
  */
 
-package pl.sii.framework.configuration;
+package pl.sii.framework.base.factory.page;
 
-import org.aeonbits.owner.Config;
+import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.WebDriver;
+import pl.sii.framework.base.component.Page;
 
-@Config.Sources("classpath:configuration.properties")
-public interface Configuration extends Config {
+@Slf4j
+public class PageFactory {
+    private WebDriver driver;
 
-    String applicationAddress();
+    public PageFactory(WebDriver driver) {
+        this.driver = driver;
+    }
 
-    String remoteHubUrl();
-
-    String browserName();
-
-    String driverType();
-
-    String email();
-
-    String password();
+    public <T extends Page> T create(Class<T> classToProxy) {
+        log.debug("Creating page object: {}", classToProxy.getSimpleName());
+        return org.openqa.selenium.support.PageFactory.initElements(driver, classToProxy);
+    }
 }

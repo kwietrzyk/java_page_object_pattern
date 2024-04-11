@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019.  Sii Poland
+ * Copyright (c) 2024.  Sii Poland
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,8 +22,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import pl.sii.framework.base.Application;
-import pl.sii.framework.base.component.Page;
-import pl.sii.framework.base.factory.DriverFactoryProvider;
+import pl.sii.framework.base.factory.driver.DriverFactoryProvider;
 import pl.sii.framework.configuration.Configuration;
 import pl.sii.framework.pages.myaccount.MyAccountPage;
 

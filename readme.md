@@ -43,10 +43,10 @@ Since everything is set up, the tests can be added and run straight away.
   driverType=LOCAL  
 ```  
   
-* **gridHubUrl** - url address of grid hub, useful only when driverType set to REMOTE.  
-For REMOTE driver type run selenium grid hub first - more details at https://www.seleniumhq.org/docs/07_selenium_grid.jsp  
+* **remoteHubUrl** - url address of remote hub, useful only when driverType set to REMOTE.  
+For REMOTE driver type run selenium remote hub first - more details at https://www.seleniumhq.org/docs/07_selenium_remote.jsp  
 ```  
-  gridHubUrl=http://localhost:5566/wd/hub  
+  remoteHubUrl=http://localhost:5566/wd/hub  
 ```  
 
 ## Test Implementation

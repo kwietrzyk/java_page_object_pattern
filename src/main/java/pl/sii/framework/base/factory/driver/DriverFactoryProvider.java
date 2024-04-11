@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019.  Sii Poland
+ * Copyright (c) 2024.  Sii Poland
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -11,15 +11,20 @@
  * limitations under the License.
  */
 
-package pl.sii.framework.base.factory;
+package pl.sii.framework.base.factory.driver;
 
-import org.aeonbits.owner.ConfigFactory;
-import org.openqa.selenium.WebDriver;
-import pl.sii.framework.configuration.Configuration;
+import lombok.extern.slf4j.Slf4j;
 
-public interface IDriverFactory {
+@Slf4j
+public class DriverFactoryProvider {
 
-    Configuration configuration = ConfigFactory.create(Configuration.class);
+    public IDriverFactory getDriverFactory() {
+        String driverType = FactoryHelper.CONFIGURATION.driverType();
+        return switch (driverType) {
+            case "LOCAL" ->  new LocalDriverFactory();
+            case "REMOTE" -> new RemoteDriverFactory();
+            default -> throw new IllegalStateException("Wrong driverType, supported types: [LOCAL, REMOTE]");
+        };
+    }
 
-    WebDriver getDriver();
 }
