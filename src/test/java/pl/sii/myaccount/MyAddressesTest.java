@@ -1,8 +1,6 @@
 package pl.sii.myaccount;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import pl.sii.base.BaseTest;
 import pl.sii.framework.pages.myaccount.MyAccountPage;
 import pl.sii.framework.pages.myaccount.MyAddressesPage;
@@ -13,12 +11,17 @@ import static org.assertj.core.api.Assertions.*;
 
 public class MyAddressesTest extends BaseTest {
 
+    private MyAccountPage myAccount;
+
+    @BeforeEach
+    public void setupClearMyAccountPage() {
+        myAccount = signInSuccessfully().goToMyAddresses().removeExistingAddressesIfAny().goToMyAccount();
+    }
+
     @Test
     @Tag("address")
     @DisplayName("Add valid first address, verify and delete")
     public void fillAddressMandatoryFieldsShouldSucceed() {
-        MyAccountPage myAccount = signInSuccessfully().goToMyAddresses().removeExistingAddressesIfAny().goToMyAccount();
-
         String addressTitle = faker.address().streetName();
         MyAddressesPage myAddressesPage = myAccount.addFirstAddress()
                 .withFistName(faker.name().firstName())
@@ -40,7 +43,6 @@ public class MyAddressesTest extends BaseTest {
     @DisplayName("Add several valid addresses, verify and delete")
     public void shouldAddSeveralNewAddresses() {
         int number = 2;
-        MyAccountPage myAccount = signInSuccessfully().goToMyAddresses().removeExistingAddressesIfAny().goToMyAccount();
         MyAddressesPage myAddressesPage = myAccount.goToMyAddresses().addNewValidAddresses(number, faker);
 
         assertThat(myAddressesPage.getMyAddresses().size() == number).withFailMessage(number + " addresses were not created");

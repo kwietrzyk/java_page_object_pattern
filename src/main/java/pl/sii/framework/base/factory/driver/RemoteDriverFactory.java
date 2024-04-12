@@ -47,5 +47,4 @@ public class RemoteDriverFactory implements IDriverFactory {
         desiredCapabilities.setCapability(browserOptions, BrowserOptionsFactory.getOptions());
         return new RemoteWebDriver(remoteHubUrl, desiredCapabilities);
     }
-
 }

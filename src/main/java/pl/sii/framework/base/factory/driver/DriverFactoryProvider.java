@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class DriverFactoryProvider {
-
     public IDriverFactory getDriverFactory() {
         String driverType = FactoryHelper.CONFIGURATION.driverType();
         return switch (driverType) {
@@ -26,5 +25,4 @@ public class DriverFactoryProvider {
             default -> throw new IllegalStateException("Wrong driverType, supported types: [LOCAL, REMOTE]");
         };
     }
-
 }

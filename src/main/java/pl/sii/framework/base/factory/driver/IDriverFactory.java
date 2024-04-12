@@ -16,6 +16,5 @@ package pl.sii.framework.base.factory.driver;
 import org.openqa.selenium.WebDriver;
 
 public interface IDriverFactory {
-
     WebDriver getDriver();
 }
